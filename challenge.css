@@ -1,0 +1,133 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    overflow-x: hidden;
+  }
+  
+  .header {
+    text-align: center;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    padding: 30px 20px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header h1 {
+    font-size: 2.8rem;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  #reward-points {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    background: white;
+    color: #38ef7d;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card {
+    width: 320px;
+    height: 450px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    position: absolute;
+    backface-visibility: hidden;
+    animation: bounceIn 0.8s ease forwards;
+    display: none;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .card h3 {
+    margin-top: 20px;
+    color: #11998e;
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px 0 20px;
+  }
+  
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-buttons button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .card-buttons button:first-child {
+    background-color: #43a047;
+    color: white;
+  }
+  
+  .card-buttons button:first-child:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05);
+  }
+  
+  .card-buttons button:last-child {
+    background-color: #eeeeee;
+    color: #333;
+  }
+  
+  .card-buttons button:last-child:hover {
+    background-color: #cccccc;
+    transform: scale(1.05);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    color: white;
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

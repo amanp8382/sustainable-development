@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socio-मंत्र | Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #f3e5f5, #e1f5fe);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #6a1b9a;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .sidebar .logo {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #4a148c;
+    }
+
+    .profile-container {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 900px;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      color: #6a1b9a;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">Socio-मंत्र</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="exchange.html">Exchange</a>
+    <a href="profile.html">Profile</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="profile-container">
+    <div class="section" id="rewards">
+      <a href="reward page.html"class="cta-btn"><h2>My Rewards</h2></a>
+      <p>You have earned <strong>1200 points</strong> through your contributions. Redeem your rewards through the exchange portal.</p>
+    </div>
+
+    <div class="section" id="contributions">
+      <h2>My Contributions</h2>
+      <p>You’ve submitted 8 eco-items and participated in 3 community events. Thank you for helping us make a difference!</p>
+    </div>
+
+    <div class="section" id="gain">
+      <h2>Gain More Points</h2>
+      <p>Boost your score by:</p>
+      <ul>
+        <li>Donating reusable items</li>
+        <li>Completing eco-challenges</li>
+        <li>Referring friends to Socio-मंत्र</li>
+        <li>Sharing posts on social media</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

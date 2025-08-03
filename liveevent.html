@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sustainability Events 🌎✨</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #d4fc79, #96e6a1);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: #2e7d32;
+    }
+
+    .events-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .event-card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .event-card:hover {
+      transform: scale(1.05);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .event-info {
+      padding: 1rem;
+    }
+
+    .event-info h2 {
+      margin: 0.5rem 0;
+      color: #388e3c;
+    }
+
+    .event-info p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .event-info .start-time {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2e7d32;
+    }
+
+    .join-btn {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+
+    .join-btn:hover {
+      background-color: #2e7d32;
+    }
+
+    .popup, .form-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      border-radius: 15px;
+      display: none;
+      z-index: 999;
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    .popup h2 {
+      margin-bottom: 1rem;
+    }
+
+    .form-popup input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .form-popup button {
+      margin-top: 1rem;
+    }
+
+    .close-btn, .submit-btn {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      background-color: #e53935;
+    }
+
+    .confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 998;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌿 Choose Your Sustainability Event! 🌎</h1>
+
+<div class="events-container">
+
+  <!-- Event 1 -->
+  <div class="event-card">
+    <img src="https://imgs.search.brave.com/7N9Fi1NLggWyM79eabd4gepfP8zA3mlTl9zbjQTNhss/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTg1/MjkwMTg4L3Bob3Rv/L3BsYW50aW5nLXRy/ZWUuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPXNHTVBFMmdO/LUxLTFVENl9JMnNY/aUhocHhZUFM5V1M4/SlBrektJM3NOUjQ9" alt="Tree Plantation Drive">
+    <div class="event-info">
+      <h2>Tree Plantation Drive 🌳</h2>
+      <p>Plant trees and green your neighborhood!</p>
+      <div class="start-time">🕒 Starts at: 10:00 AM</div>
+      <button class="join-btn" onclick="joinEvent('Tree Plantation Drive')">Join</button>
+    </div>
+  </div>
+
+  <!-- Event 2 -->
+  <div class="event-card">
+    <img src="https://imgs.search.brave.com/akEpxh2aY7bdHkafGprWn8mA5vuWm0q6meKQ2SKvojE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/MzIyMDg0Ny9waG90/by93b21hbi1jbGVh/bmluZy10aGUtYmVh/Y2guanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPVh4Z0h5VjFL/WndZc1drc003RkxL/RENCV2Q5T1hkdlcw/TnE1ajVPbmJ6VjA9" alt="Beach Cleanup">
+    <div class="event-info">
+      <h2>Beach Cleanup 🏖️</h2>
+      <p>Help clean and save our oceans!</p>
+      <div class="start-time">🕒 Starts at: 12:00 PM</div>
+      <button class="join-btn" onclick="joinEvent('Beach Cleanup')">Join</button>
+    </div>
+  </div>
+
+  <!-- Event 3 -->
+  <div class="event-card">
+    <img src="https://imgs.search.brave.com/W4c4cIAo6wo5ct_QGX_sBtJba-tcXRP7zkR1FphNit0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdDMu/ZGVwb3NpdHBob3Rv/cy5jb20vMTMzMjQy/NTYvMTg5NzQvaS80/NTAvZGVwb3NpdHBo/b3Rvc18xODk3NDcz/ODAtc3RvY2stcGhv/dG8tcmVjeWNsaW5n/LmpwZw" alt="Recycling Workshop">
+    <div class="event-info">
+      <h2>Recycling Workshop ♻️</h2>
+      <p>Learn how to recycle creatively!</p>
+      <div class="start-time">🕒 Starts at: 2:00 PM</div>
+      <button class="join-btn" onclick="joinEvent('Recycling Workshop')">Join</button>
+    </div>
+  </div>
+
+  <!-- Event 4 -->
+  <div class="event-card">
+    <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783" alt="Sustainability Talk">
+    <div class="event-info">
+      <h2>Sustainability Talk 🎤</h2>
+      <p>Inspiring talks from green leaders!</p>
+      <div class="start-time">🕒 Starts at: 4:00 PM</div>
+      <button class="join-btn" onclick="joinEvent('Sustainability Talk')">Join</button>
+    </div>
+  </div>
+
+  <!-- Event 5 -->
+  <div class="event-card">
+    <img src="https://imgs.search.brave.com/o1jbehVzwTg_cFrZvTv-W26JCVF3G9wIVoHRt9Lojks/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9l/Y28tZnJpZW5kbHkt/c2lnbl8yMy0yMTQ4/NTc2NzE4LmpwZz9z/ZW10PWFpc19oeWJy/aWQmdz03NDA" alt="Eco-Friendly Crafts">
+    <div class="event-info">
+      <h2>Eco-Friendly Crafts 🎨</h2>
+      <p>Create crafts using waste material!</p>
+      <div class="start-time">🕒 Starts at: 6:00 PM</div>
+      <button class="join-btn" onclick="joinEvent('Eco-Friendly Crafts')">Join</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Registration Form Popup -->
+<div class="form-popup" id="formPopup">
+  <h2>🎉 Join the Event</h2>
+  <form id="registrationForm">
+    <input type="text" id="name" placeholder="Enter your name" required><br>
+    <input type="email" id="email" placeholder="Enter your email" required><br>
+    <button type="submit" class="submit-btn">Submit</button><br>
+    <button type="button" class="close-btn" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
+
+<!-- Success Popup -->
+<div class="popup" id="popup">
+  <h2>✅ Successfully Registered!</h2>
+  <p id="joinedEvent"></p>
+  <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<canvas class="confetti-canvas" id="confetti"></canvas>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  let selectedEvent = '';
+
+  function joinEvent(eventName) {
+    selectedEvent = eventName;
+    document.getElementById('formPopup').style.display = 'block';
+  }
+
+  function closeForm() {
+    document.getElementById('formPopup').style.display = 'none';
+  }
+
+  document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('formPopup').style.display = 'none';
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('joinedEvent').innerText = `You've successfully joined the "${selectedEvent}" event! 🌟`;
+    launchConfetti();
+  });
+
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  function launchConfetti() {
+    var duration = 2 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 998 };
+
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    var interval = setInterval(function() {
+      var timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      var particleCount = 50 * (timeLeft / duration);
+      confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0, 1), y: Math.random() - 0.2 } }));
+    }, 250);
+  }
+</script>
+
+</body>
+</html>

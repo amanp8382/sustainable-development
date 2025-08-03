@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability Survey - Socio-मंत्र</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      color: #2e7d32;
+      padding: 2rem;
+    }
+
+    .survey-container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffffee;
+      padding: 2.5rem;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #00897b;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      color: #555;
+    }
+
+    .question-card {
+      background: #f1f8e9;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .question-card:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: #33691e;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border: 2px solid #c5e1a5;
+      border-radius: 12px;
+      transition: border 0.3s;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #66bb6a;
+      outline: none;
+      background: #f9fff8;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 2rem;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: #fff;
+      padding: 16px;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #00897b;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .back-link a:hover {
+      color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="survey-container">
+    <h1>🌿 Socio-मंत्र Survey</h1>
+    <p class="intro-text">Help us understand your lifestyle so we can recommend realistic and impactful sustainability goals ✨</p>
+    <form>
+
+      <div class="question-card">
+        <label>1. What time do you usually wake up?</label>
+        <input type="text" placeholder="e.g. 7:00 AM">
+      </div>
+
+      <div class="question-card">
+        <label>2. How do you usually commute?</label>
+        <select>
+          <option>Walk 🚶</option>
+          <option>Cycle 🚴</option>
+          <option>Public Transport 🚌</option>
+          <option>Personal Vehicle 🚗</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>3. How many home-cooked meals do you eat per week?</label>
+        <input type="number" placeholder="e.g. 10">
+      </div>
+
+      <div class="question-card">
+        <label>4. How often do you shop for groceries?</label>
+        <select>
+          <option>Daily</option>
+          <option>2-3 times a week</option>
+          <option>Weekly</option>
+          <option>Monthly</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>5. Do you prefer eco-friendly/organic products?</label>
+        <select>
+          <option>Yes</option>
+          <option>Sometimes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>6. How often do you carry a reusable bag while shopping?</label>
+        <select>
+          <option>Always</option>
+          <option>Often</option>
+          <option>Rarely</option>
+          <option>Never</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>7. What do you do with leftover food?</label>
+        <textarea placeholder="e.g. Reuse it, compost it, donate it, etc."></textarea>
+      </div>
+
+      <div class="question-card">
+        <label>8. Do you separate your waste (dry/wet)?</label>
+        <select>
+          <option>Always</option>
+          <option>Sometimes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>9. Do you compost kitchen waste?</label>
+        <select>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Planning to start</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>10. Would you like daily eco-friendly challenges?</label>
+        <select>
+          <option>Yes, please!</option>
+          <option>Maybe later</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <label>11. What's one change you’d like to make today for the planet? 🌍</label>
+        <textarea placeholder="Share your thought here..."></textarea>
+      </div>
+
+      <button type="submit">🌟 Submit & Start Your Green Journey</button>
+    </form>
+
+    <div class="back-link">
+      <a href="index.html">← Back to Homepage</a>
+    </div>
+  </div>
+</body>
+</html>

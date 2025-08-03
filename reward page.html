@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socio-मंत्र | Rewards</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe082, #ffcc80);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f57c00;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .sidebar .logo {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #e65100;
+    }
+
+    .rewards-container {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 900px;
+    }
+
+    .reward-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .reward-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .reward-card h2 {
+      color: #f57c00;
+      font-size: 1.8rem;
+    }
+
+    .reward-card p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .reward-card .emoji {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      animation: bounce 1s infinite;
+    }
+
+    .reward-card .earn-more {
+      color: #f57c00;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+
+    .reward-card .earn-more:hover {
+      color: #e65100;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">Socio-मंत्र</div>
+    <a href="homepage.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="exchange.html">Exchange</a>
+    <a href="profile.html">Profile</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="rewards-container">
+    <div class="reward-card">
+      <h2>Your Total Points: 1200</h2>
+      <p>Congratulations! 🎉 You've earned these points for all your contributions. Here are your rewards:</p>
+      <div class="emoji">🏆</div>
+      <p><strong>Eco Champion</strong> - Earned for donating eco-friendly items and helping clean up the environment! <span class="earn-more">Earn more points</span></p>
+    </div>
+
+    <div class="reward-card">
+      <h2>Special Achievement: 500 Points!</h2>
+      <p>You've earned 500 points for being an active contributor! 🌱 Keep it up, and more rewards are waiting for you!</p>
+      <div class="emoji">🌟</div>
+      <p><strong>Green Warrior</strong> - You've contributed to multiple campaigns! Keep spreading the word. <span class="earn-more">Earn more points</span></p>
+    </div>
+
+    <div class="reward-card">
+      <h2>Upcoming Rewards</h2>
+      <p>You are on the way to unlocking more rewards. Stay motivated! 🔥</p>
+      <div class="emoji">💪</div>
+      <p><strong>Next Achievement: 1500 Points</strong> - Reach this milestone to unlock an exclusive badge. <span class="earn-more">Earn more points</span></p>
+    </div>
+  </div>
+</body>
+</html>
