@@ -11,7 +11,7 @@
 <body>
 
   <!-- Chatbot Button -->
-  <button class="chatbot-btn" onclick="toggleChat()">💬</button>
+  <button class="chatbot-btn" onclick="toggleChat()" aria-label="Open chatbot">💬</button>
 
   <!-- Chatbot Window -->
   <div class="chat-window" id="chatWindow" style="display: none;">
@@ -20,7 +20,8 @@
       <p><strong>Bot:</strong> Hello! How can I help you today? 🌱</p>
     </div>
     <div class="input-box">
-      <input type="text" id="chatInput" placeholder="Type your message...">
+      <input type="text" id="chatInput" placeholder="Type your message..."
+        onkeydown="if(event.key==='Enter'){sendMessage();}">
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
@@ -66,20 +67,22 @@
   <!-- Login/Signup Section -->
   <div id="auth-container" style="display: none;">
     <h2>Welcome to Socio-मंत्र</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
+    <input type="text" placeholder="Username" />
+    <input type="password" placeholder="Password" />
     <button class="auth-btn" onclick="alert('Login successful (mock)')">Login</button>
     <span class="help-register" onclick="alert('Help page coming soon')">Help me Register</span>
     <span class="signup-link" onclick="alert('Signup page coming soon')">Sign Up</span>
   </div>
 
   <!-- Floating Eco Challenge Buttons -->
-  <button id="floating-eco-btn" class="floating-eco-btn">
-    ♻️
-  </button>
-  <button class="floating-eco-btn" id="ecoChallengeBtn" onclick="window.location.href='challenge.html'">
-    🌿
-  </button>
+  <button id="floating-eco-btn" class="floating-eco-btn">♻️</button>
+  <button class="floating-eco-btn" id="ecoChallengeBtn" onclick="window.location.href='challenge.html'">🌿</button>
+
+  <!-- Daily Challenge Box -->
+  <div id="daily-challenge"
+    style="display:none; padding:20px; background:#e8f5e9; border-radius:10px; margin:20px; font-size:1.1rem;">
+    🌱 Today’s Eco Challenge: Use a reusable bottle instead of plastic! 💧
+  </div>
 
   <!-- Full Figure -->
   <div class="eco-figure">
@@ -91,59 +94,65 @@
 
   <!-- Scripts -->
   <script>
-
+    // Toggle chatbot window
     function toggleChat() {
       const chatWindow = document.getElementById('chatWindow');
       chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
     }
 
+    // Gemini Chat API integration for the chatbox
     async function sendMessage() {
       const input = document.getElementById('chatInput');
       const message = input.value.trim();
-      if (message) {
-        const messagesDiv = document.getElementById('chatMessages');
+      const messagesDiv = document.getElementById('chatMessages');
 
+      if (message) {
+        // Show user's message
         const userMsg = document.createElement('p');
         userMsg.innerHTML = `<strong>You:</strong> ${message}`;
         messagesDiv.appendChild(userMsg);
         input.value = '';
 
         try {
-          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCAOfhE8qZIwEEb0pdeSU6X7W54Szoip4g`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              "prompt": {
-                "messages": [
-                  { "author": "user", "content": message }
+          const response = await fetch(
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=your api key",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                contents: [
+                  { role: "user", parts: [{ text: message }] }
                 ]
-              }
-            })
-          });
+              })
+            }
+          );
 
           const data = await response.json();
           let botReply = "🌿 Sorry, I couldn't understand. Try again!";
 
+          // ✅ Properly extract text reply
           if (data && data.candidates && data.candidates.length > 0) {
-            botReply = data.candidates[0].content;
+            const parts = data.candidates[0].content?.parts;
+            if (parts && parts.length > 0 && parts[0].text) {
+              botReply = parts[0].text;
+            }
           }
 
+          // Show bot's message
           const botMsg = document.createElement('p');
           botMsg.innerHTML = `<strong>Bot:</strong> ${botReply}`;
           messagesDiv.appendChild(botMsg);
           messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
         } catch (error) {
-          console.error('Error:', error);
-          const botMsg = document.createElement('p');
-          botMsg.innerHTML = `<strong>Bot:</strong> ❌ Failed to connect. Try again later.`;
-          messagesDiv.appendChild(botMsg);
+          const errMsg = document.createElement('p');
+          errMsg.innerHTML = `<strong>Bot:</strong> ❌ Failed to connect. Try again later.`;
+          messagesDiv.appendChild(errMsg);
         }
       }
     }
 
+    // Sidebar toggle
     function toggleMenu() {
       const menu = document.getElementById('sideMenu');
       if (menu.style.left === '0px') {
@@ -153,12 +162,15 @@
       }
     }
 
+    // Show login section
     function showLogin() {
       document.getElementById("title-container").style.display = "none";
       document.getElementById("auth-container").style.display = "block";
     }
 
+    // Camera feature
     function openCamera() {
+      if (document.querySelector('video')) return; // Prevent duplicates
       const videoElement = document.createElement('video');
       videoElement.style.width = '100%';
       videoElement.style.maxWidth = '400px';
@@ -177,6 +189,7 @@
         });
     }
 
+    // Floating Eco Button
     const floatingEcoBtn = document.getElementById('floating-eco-btn');
     floatingEcoBtn.addEventListener('click', () => {
       const dailyChallengeBox = document.getElementById('daily-challenge');
@@ -186,7 +199,6 @@
       }
     });
   </script>
-
 </body>
 
 </html>
